@@ -13,9 +13,13 @@
 
 import React from 'react';
 
+import SearchContainer from '../SearchContainer';
+import SearchResultsListContainer from '../SearchResultsListContainer';
+
 import styles from './styles.css';
 
-export default class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
+export default class App extends React.Component {
+  // eslint-disable-line react/prefer-stateless-function
 
   static propTypes = {
     children: React.PropTypes.node,
@@ -25,6 +29,9 @@ export default class App extends React.Component { // eslint-disable-line react/
     return (
       <div className={styles.container}>
         {React.Children.toArray(this.props.children)}
+
+        <SearchContainer />
+        <SearchResultsListContainer />
       </div>
     );
   }
